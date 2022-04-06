@@ -326,7 +326,7 @@ img {
   background-color: var(--secondary-bg-color);
 }
 
-.footer__flex-contsiner {
+.footer__flex-container {
   display: flex;
   align-items: baseline;
 }
