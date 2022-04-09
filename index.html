@@ -364,7 +364,7 @@
                 </address>    
             </div>
             <div class="footer__flex-item">
-                <h2 class="footer__socilas-title">Приєднуйтесь</h2>
+                <h2 class="footer__title">Приєднуйтесь</h2>
                 <ul class="footer__socials-list socials__list">
                     <li class="footer__socials-item socials__item">
                         <a class="footer__socials-link socials__link" href="#">
@@ -396,17 +396,73 @@
                     </li>
                 </ul>
             </div>
+            <div class="footer__flex-item">
+                <h2 class="footer__title">Підпишіться на розсилку</h2>
+                <form class="footer__form js-speaker-form" name="subscribe-form">                    
+                    <input class="footer__input-email" type="email" name="subscribe-email" autocomplete="email" placeholder="E-mail">
+                    <button class="footer__button button" type="submit">Підписатися</button>
+                </form>
+            </div>
         </div>                   
     </footer>
 
     <div data-backdrop class="backdrop">
-        <div data-modal class="modal">            
-            <button data-modal-close class="modal__close">
+        <div data-modal class="modal">
+            <h2 class="modal__title">Залиште свої дані, ми вам зателефонуємо</h2> 
+            <form class="modal__form form js-speaker-form" name="contact-form">
+                <label class="form__field">
+                    <span class="form__label">Ім'я</span>
+                    <input class="form__input" type="text" name="client-name" autocomplete="name" required>
+                    <svg class="form__icon">
+                        <use href="./images/icons.svg#person-form"></use>
+                    </svg>
+                </label>         
+                <label class="form__field">
+                    <span class="form__label">Телефон</span>
+                    <input class="form__input" type="tel" name="client-phone" autocomplete="tel" required>
+                    <svg class="form__icon">
+                        <use href="./images/icons.svg#phone-form"></use>
+                    </svg>
+                </label>                
+                <label class="form__field">
+                    <span class="form__label">Пошта</span>
+                    <input class="form__input" type="email" name="client-email" autocomplete="email" required>
+                    <svg class="form__icon">
+                        <use href="./images/icons.svg#email-form"></use>
+                    </svg>
+                </label>                
+                <label class="form__field">
+                    <span class="form__label">Коментар</span>
+                    <textarea class="form__textarea" name="client-comment" placeholder="Введіть текст"></textarea>
+                </label>                  
+                <label class="form__field-checkbox">
+                    <input class="form__input-checkbox" type="checkbox" name="agreement" value="agree" required />
+                    <span class="form__checkbox-icon"></span>
+                    <span class="form__label-checkbox">
+                        Погоджуюся з розсилкою та приймаю <a class="form__link" href="#">Умови договору</a>
+                    </span>
+                </label>             
+                <button class="form__btn button" type="submit">Відправити</button>
+            </form>           
+            <button data-modal-close class="modal__close" type="button">
                 <svg class="modal__close-icon">
                     <use href="./images/icons.svg#close"></use>
                 </svg>
             </button>            
         </div>
     </div>
+
+    <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                    console.log(`${name}: ${value}`),
+                );
+            });
+        })();
+    </script>
 </body>
 </html>
