@@ -284,7 +284,7 @@ textarea {
 
 .form__input:focus,
 .form__textarea:focus {
-  outline: 1px solid var(--accent-color);
+  outline: none;
   border-color: var(--accent-color);
 }
 
@@ -536,7 +536,7 @@ textarea {
 }
 
 .footer__input-email:focus {
-  outline: 1px solid var(--accent-color);
+  outline: none;
   border-color: var(--accent-color);
 }
 
