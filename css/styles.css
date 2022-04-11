@@ -163,8 +163,7 @@ textarea {
 .modal {
   position: absolute;
   top: -1000px;
-  left: 50%;
-  height: 581px;
+  left: 50%;  
   width: 528px; 
   padding: 40px;
   background-color: var(--main-bg-color);
